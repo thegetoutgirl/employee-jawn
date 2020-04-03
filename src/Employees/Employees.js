@@ -1,5 +1,8 @@
 import React from 'react'
 import api from '../Api/api'
+// import '/lumen-bootstrap.css'
+// import '/styles.css'
+
 // eslint-disable-next-line
 
 class EmployeeList extends React.Component{
@@ -8,19 +11,10 @@ class EmployeeList extends React.Component{
         people: []
   }
 
-  // var person = [ 
-  //   picture: results.picture.thumbnail,
-  //   fName: results.name.first,
-  //   lName: results.name.last,
-  //   phone: results.phone,
-  //   email: results.email,
-  //   dob: results.dob.date
-  //   ] 
-
 componentDidMount() {
   api.people()
   .then(res => {
-    this.setState({people: res.data.people})
+    this.setState({people: res.data.results})
   console.log(this.state.people)
   })
 }
@@ -33,9 +27,9 @@ componentDidMount() {
 render() {
     return (
         <div>
-    <table>
+    <table className="table-hover table-style">
         <thead>
-           <tr>
+           <tr className="table-primary th">
              <th>Photo</th>
              <th>First Name</th>
              <th>Last Name</th>
@@ -44,24 +38,20 @@ render() {
              <th>DOB</th>
            </tr>
               </thead>
-              
+
+    <tbody className="rows">          
     {this.state.people && this.state.people.map(person =>       
-            <div><tbody >
-            <tr key={person.id.value}> 
-            <td>
+            <tr className="rows" key={person.id.value}> 
             <td ><img src={person.picture.thumbnail} alt="thumb" /></td>
                 <td >{person.name.first}</td>
                 <td >{person.name.last}</td>
                 <td >{person.phone}</td>
                 <td >{person.email}</td>
                 <td >{person.dob.date}</td>
-            </td>
             </tr>
-            
+            )} 
             </tbody>
-            </div>
-              )} 
-        </table>
+            </table>
             </div>
     )}
   }

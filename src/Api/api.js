@@ -1,20 +1,17 @@
-// import React from 'react';
 import axios from 'axios';
 
-// class Api extends React.component {
+// Calls one person with specific fields 
 
+// export default {
+//     solo: function() {
+//         var one = axios.get('https://randomuser.me/api/inc=id,picture,name,phone,email,dob')
+//         return one
+//     }
+// }
+
+// Calls 20 people in a list
 export default {
     people: function() {
-    return axios.get(`https://randomuser.me/api/?results=20`)
+    return axios.get(`https://randomuser.me/api/?results=20&nat=us&inc=id,picture,name,phone,email,dob`)
         }
 }
-
-// const url = 'https://randomuser.me/api/?results=50';
-
-// //api call
-// export default {
-//     ApiSearch: function () {
-//         console.log(url)
-//         return axios.get(url)
-
-//     }
