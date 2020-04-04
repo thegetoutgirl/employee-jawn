@@ -52,27 +52,24 @@ sortBy = sortType => {
     }
 
 handleInputChange = event => {
-    console.log(event.target.value)
-        
-    const find = event.target.value.toLowerCase();
-    
+       
+    const searchTerm = event.target.value.toLowerCase();
     const searchResults = this.state.people.filter(person =>{
-        const found = person.name.first + person.name.last;
-        return found.toLowerCase().includes(find)
+        const find = person.name.first + person.name.last;
+        return find.toLowerCase().includes(searchTerm)
         });
    
         this.setState({
             searchResults: searchResults,
-            search: find
+            search: searchTerm
         });
     }
 
 render() {
-
     return (
         <>
         <div>
-            <Search handler={this.handleInputChange} value={this.state.search}>
+            <Search handler={this.handleInputChange} defaultValue={this.state.search}>
                 </Search>
     <table className="table-hover table-style">
         <thead>
@@ -87,14 +84,14 @@ render() {
               </thead>
 
     <tbody className="rows">          
-    {this.state.people && this.state.people.map(person => (       
+    {this.state.searchResults && this.state.searchResults.map(person => (       
             <tr className="rows" key={person.id.value}> 
             <td ><img src={person.picture.thumbnail} alt="thumb" /></td>
                 <td >{person.name.first}</td>
                 <td >{person.name.last}</td>
                 <td >{person.phone}</td>
                 <td >{person.email}</td>
-                <td >{person.dob.date.split("T"[0])}</td>
+                <td >{person.dob.date.split("T")[0]}</td>
             </tr>
     ))} 
             </tbody>
