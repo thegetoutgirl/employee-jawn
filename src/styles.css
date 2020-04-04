@@ -1,0 +1,26 @@
+.heading {
+    background-color: "primary";
+    height: 150px;
+    color: white;
+    font-family: 'Do Hyeon', sans-serif;  
+}
+
+.th {
+    height: 40px;
+    text-align: center;
+    padding: 3px;
+}
+
+tr, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px;
+    border-bottom-color: #008cba;
+}
+ 
+.table-style {
+    table-layout: auto;
+    width: 1050px;
+    margin: auto;
+    text-align: center;
+}
