@@ -4,7 +4,6 @@ import Search from '../Search/Search'
 // import '/lumen-bootstrap.css'
 // import '/styles.css'
 
-// eslint-disable-next-line
 
 class EmployeeList extends React.Component{
     state = {
