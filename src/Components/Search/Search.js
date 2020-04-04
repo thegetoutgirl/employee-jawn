@@ -1,11 +1,15 @@
 import React from 'react';
+// import '../src/style.css';
+// import '../src/lumen-bootstrap.css';
 
+
+// Search Component *could use some styling!*
 export default function Search(props) { 
         return (
-          <div>
+          <div className="">
               <input
                 onChange={props.handleInputChange}
-                value={props.search}
+                value={props.value}
                 name="search"
                 type="text"
                 className="searchInput"

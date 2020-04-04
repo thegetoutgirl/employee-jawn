@@ -1,31 +1,30 @@
 import React from 'react'
 import api from '../Api/api'
+import Search from '../Search/Search'
 // import '/lumen-bootstrap.css'
 // import '/styles.css'
 
 // eslint-disable-next-line
 
 class EmployeeList extends React.Component{
-    // search: "",
     state = {
         people: [],
         sortOrder: "ASC",
+        searchResults: [],
+        search: '',
   }
+
 // randomUserAPI
 componentDidMount() {
   api.people()
   .then(res => {
-    this.setState({people: res.data.results})
+    this.setState({
+        people: res.data.results,
+        searchResults: res.data.results,
+})
   console.log(this.state.people)
-  })
+  });
 }
-
-// Search field
-// searchResults = query => (
-//   people.search(query)
-//   .then(res => this.setState({people: res.data})
-//     .catch(err => console.log(err))
-//   ))
 
 // Sort by Last Name
 sortBy = sortType => {
@@ -52,10 +51,29 @@ sortBy = sortType => {
       this.setState({ results: sortedEmployees })
     }
 
+handleInputChange = event => {
+    console.log(event.target.value)
+        
+    const find = event.target.value.toLowerCase();
+    
+    const searchResults = this.state.people.filter(person =>{
+        const found = person.name.first + person.name.last;
+        return found.toLowerCase().includes(find)
+        });
+   
+        this.setState({
+            searchResults: searchResults,
+            search: find
+        });
+    }
+
 render() {
 
     return (
+        <>
         <div>
+            <Search handler={this.handleInputChange} value={this.state.search}>
+                </Search>
     <table className="table-hover table-style">
         <thead>
            <tr className="table-primary th">
@@ -76,12 +94,13 @@ render() {
                 <td >{person.name.last}</td>
                 <td >{person.phone}</td>
                 <td >{person.email}</td>
-                <td >{person.dob.date}</td>
+                <td >{person.dob.date.split("T"[0])}</td>
             </tr>
     ))} 
             </tbody>
             </table>
             </div>
+            </>
     )}
     }
   
