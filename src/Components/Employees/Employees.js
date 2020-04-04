@@ -29,7 +29,7 @@ componentDidMount() {
 // Sort by Last Name
 sortBy = sortType => {
     // this.setState({sortType: name})
-    
+    x
     const sortedEmployees = this.state.people.sort((a, b) => {
         if (b.name[sortType] > a.name[sortType]) {
           return -1
