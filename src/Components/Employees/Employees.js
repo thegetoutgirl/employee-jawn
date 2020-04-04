@@ -1,8 +1,8 @@
 import React from 'react'
 import api from '../Api/api'
 import Search from '../Search/Search'
-// import '/lumen-bootstrap.css'
-// import '/styles.css'
+import '../../lumen-bootstrap.css'
+import './employees.css'
 
 
 class EmployeeList extends React.Component{
