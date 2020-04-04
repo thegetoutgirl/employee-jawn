@@ -32,14 +32,14 @@
 //     })
 //   }
 
-  // //calling api
-  // componentDidMount() {
-  //   API.ApiSearch()
-  //     .then(res => {
-  //       this.setState({ results: res.data.results })
-  //       console.log(this.state.results)
-  //     })
-  // }
+//   //calling api
+//   componentDidMount() {
+//     API.ApiSearch()
+//       .then(res => {
+//         this.setState({ results: res.data.results })
+//         console.log(this.state.results)
+//       })
+//   }
 
 //   //Sort by first name
 //   sortByFName = () => {
@@ -99,15 +99,15 @@
 //   //     return 0;
 //   //   });
 
-//   //   if (this.state.sortOrder === "DESC") {
-//   //     sortedEmployees.reverse();
-//   //     this.setState({ sortOrder: "ASC" });
-//   //   } else {
-//   //     this.setState({ sortOrder: "DESC" });
-//   //   }
-//   //   console.log(sortedEmployees)
-//   //   this.setState({ results: sortedEmployees })
-//   // }
+//     if (this.state.sortOrder === "DESC") {
+//       sortedEmployees.reverse();
+//       this.setState({ sortOrder: "ASC" });
+//     } else if {
+//       this.setState({ sortOrder: "DESC" });
+//     }
+//     console.log(sortedEmployees)
+//     this.setState({ results: sortedEmployees })
+//   }
 
 
 
@@ -123,7 +123,8 @@
 //               <tr>
 //                 <th>Image</th>
 //                 <th>F-Name <span className="downArrow" onClick={this.sortByFName}></span></th>
-//                 <th>L-Name <span className="downArrow" onClick={this.sortByLName}></span></th>
+//                 <th onClick={sort}>
+//                   L-Name <span className="downArrow" onClick={this.sortByLName}></span></th>
 //                 <th>Phone</th>
 //                 <th>Email</th>
 //                 {/* <th>DOB <span className="downArrow" onClick={this.sortByAge}></span></th> */}

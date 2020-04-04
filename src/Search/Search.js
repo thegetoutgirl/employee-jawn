@@ -3,8 +3,10 @@ import { render } from "@testing-library/react";
 
 class Search extends Component {
     state = {
-        FRUIT/PEOPLE
-    }
+    search: "",
+    people: [],
+    searchResults: [],
+}    
 
 handleInputChange = event => {
     console.log(event.target.value)
@@ -21,3 +23,9 @@ handleInputChange = event => {
    }
    
 }
+Search field
+searchResults = query => (
+  people.search(query)
+  .then(res => this.setState({people: res.data})
+    .catch(err => console.log(err))
+  ))
