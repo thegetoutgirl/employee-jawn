@@ -5,11 +5,13 @@ import React from 'react';
 
 // Search Component *could use some styling!*
 export default function Search(props) { 
+
+
         return (
           <div className="">
               <input
-                onChange={props.handleInputChange}
-                value={props.value}
+                onChange={props.handler}
+                value={props.defaultValue}
                 name="search"
                 type="text"
                 className="searchInput"
