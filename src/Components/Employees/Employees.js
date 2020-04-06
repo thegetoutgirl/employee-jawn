@@ -25,9 +25,8 @@ componentDidMount() {
   });
 }
 
-// Sort by Last Name
+// Sort by Last Name, First Name, City
 sortBy = sortType => {
-    // this.setState({sortType: name})
     
     const sortedEmployees = this.state.people.sort((a, b) => {
         if (b.name[sortType] > a.name[sortType]) {
@@ -36,6 +35,12 @@ sortBy = sortType => {
         if (a.name[sortType] > b.name[sortType]) {
           return 1
         }
+        // if (b.city[sortType] > a.city[sortType]) {
+        //   return -1
+        // }
+        // if (a.city[sortType] > b.city[sortType]) {
+        //   return 1
+        // }
           return 0;
 
     });
@@ -67,10 +72,13 @@ handleInputChange = event => {
 render() {
     return (
         <>
+        <br />
         <div>
             <Search handler={this.handleInputChange} defaultValue={this.state.search}>
                 </Search>
+        <br />
     <table className="table-hover table-style">
+      {/* <p>Click to sort by First Name, Last Name, or City!</p> */}
         <thead>
            <tr className="table-primary th">
              <th>Photo</th>
@@ -78,6 +86,7 @@ render() {
              <th onClick={() => this.sortBy("last")}>Last Name</th>
              <th>Phone</th>
              <th>Email</th>
+             <th onClick={() => this.sortBy("city")}>City</th>
              <th>DOB</th>
            </tr>
               </thead>
@@ -89,7 +98,8 @@ render() {
                 <td >{person.name.first}</td>
                 <td >{person.name.last}</td>
                 <td >{person.phone}</td>
-                <td >{person.email}</td>
+                <td>{person.email}</td>
+                <td> {person.location.city}</td>
                 <td >{person.dob.date.split("T")[0]}</td>
             </tr>
     ))} 
