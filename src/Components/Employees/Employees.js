@@ -77,8 +77,9 @@ render() {
             <Search handler={this.handleInputChange} defaultValue={this.state.search}>
                 </Search>
         <br />
+<div className="table-style"><p>Click to sort by First or Last Name!</p></div> 
+
     <table className="table-hover table-style">
-      {/* <p>Click to sort by First Name, Last Name, or City!</p> */}
         <thead>
            <tr className="table-primary th">
              <th>Photo</th>
