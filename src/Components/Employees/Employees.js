@@ -81,7 +81,7 @@ render() {
 
     <table className="table-hover table-style">
         <thead>
-           <tr className="table-primary th">
+           <tr className="table-primary th grad">
              <th>Photo</th>
              <th onClick={() => this.sortBy("first")}>First Name</th>
              <th onClick={() => this.sortBy("last")}>Last Name</th>

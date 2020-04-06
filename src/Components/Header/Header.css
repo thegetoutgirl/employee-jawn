@@ -6,7 +6,8 @@
   font-family: 'Do Hyeon', sans-serif;
   text-align: center;
   padding-top: 20px;
-};
+}
+
 .grad {
   background-image: linear-gradient(to left bottom, #5bc0de, #4ab3d5, #38a6cc, #2399c3, #008cba)!important;
 }
@@ -31,16 +32,3 @@ a:link, a:visited {
 a:hover {
   color: #333;
 }
-
-  
-  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-  @media screen and (max-width: 500px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    .header-right {
-      float: none;
-    }
-  }
